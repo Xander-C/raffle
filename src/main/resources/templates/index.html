@@ -1,18 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>文件上传示例</title>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../static/src/css/materialize.css" th:href="@{~/src/css/materialize.css}" media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link type="text/css" href="../static/index/css/index.css" th:href="@{~/index/css/index.css}" rel="styleSheet"/>
+
 </head>
 <body>
-<h2>文件上传示例</h2>
-<hr/>
-<form method="POST" enctype="multipart/form-data" action="/upload">
-    <p>
-        文件：<input type="file" name="file" />
-    </p>
-    <p>
-        <input type="submit" value="上传" />
-    </p>
-</form>
+<nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><img src="../static/src/images/logo.png" th:src="@{~/src/images/logo.png}" id="logo-container">
+        <ul class="right hide-on-med-and-down">
+            <li><a href="/raffle">跳过</a></li>
+            <li><a href="https://blog.xanderc.top">我的博客</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav">
+            <li><a href="/raffle">跳过</a></li>
+            <li><a href="https://blog.xanderc.top">我的博客</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+</nav>
+<div class="container row">
+    <div class="card col s12 m8 offset-m2 l6 offset-l3" id="main-card">
+        <div class="card-image">
+            <img src="../static/index/images/sample.png" th:src="@{~/index/images/sample.png}" style="width: 100%">
+            <span class="card-title black-text ">文件样例</span>
+        </div>
+        <div class="card-content">
+            <p>同时支持.xls与.xlsx格式</p>
+        </div>
+    </div>
+    <div class="card col s12 m8 offset-m2 l6 offset-l3">
+        <div class="card-content">
+            <span class="card-title black-text ">选择文件上传</span>
+            <form method="POST" enctype="multipart/form-data" action="/upload">
+                <div class="file-field input-field">
+                    <div class="btn light-blue lighten-1">
+                        <span>文件</span>
+                        <input type="file" name="file">
+                    </div>
+                    <div class="file-path-wrapper black-text">
+                        <input class="file-path validate black-text" type="text">
+                    </div>
+                </div>
+                <input class="waves-effect waves-light btn light-blue lighten-1"type="submit" value="上传" />
+            </form>
+            <a id="jump" href="/raffle">跳过上传使用当前最新数据</a>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript" src="../static/src/js/materialize.js" th:src="@{~/src/js/materialize.js}"></script>
+<script src="../static/src/js/jquery-3.4.1.js" th:src="@{~/src/js/jquery-3.4.1.js}"></script>
 </body>
 </html>

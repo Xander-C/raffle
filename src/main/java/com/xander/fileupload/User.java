@@ -21,6 +21,10 @@ public class User {
                 '}';
     }
 
+    public String toSidName(){
+        return this.sid + "<br>" + this.name;
+    }
+
     public String getSid() {
         return sid;
     }

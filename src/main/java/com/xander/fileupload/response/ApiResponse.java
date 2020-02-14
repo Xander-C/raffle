@@ -13,6 +13,15 @@ public class ApiResponse {
     private String info;
     private Object resultObject;
 
+    @Override
+    public String toString() {
+        return "ApiResponse{" +
+                "status=" + status +
+                ", info='" + info + '\'' +
+                ", resultObject=" + resultObject +
+                '}';
+    }
+
     public ApiResponse() {
         this.status = ReturnCode.CODE_FAIL;
     }

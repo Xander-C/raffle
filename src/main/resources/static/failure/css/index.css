@@ -1,0 +1,12 @@
+body{
+    background-color: #f6f9fe;
+}
+#logo-container{
+    height: 65px;
+}
+#first-card{
+    margin-top: 10px;
+}
+#stop{
+    cursor: pointer;
+}

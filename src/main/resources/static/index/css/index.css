@@ -1,0 +1,17 @@
+body{
+    background-color: #f6f9fe;
+}
+#logo-container{
+    height: 65px;
+}
+#main-card{
+    margin-top: 20px;
+}
+#submit-btn{
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+#jump{
+    display: block;
+    margin-top: 20px;
+}

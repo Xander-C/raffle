@@ -1,0 +1,32 @@
+body{
+    background-color: #f6f9fe;
+}
+#logo-container{
+    height: 65px;
+}
+#cards-container{
+    margin-top: 50px;
+}
+.scratch-card{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    height: 150px;
+    font-size: xx-large;
+    color: #000000BF;
+    border-radius: 10px;
+    position: relative;
+}
+.my-canvas{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.canvas{
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+.text{margin: 0}
