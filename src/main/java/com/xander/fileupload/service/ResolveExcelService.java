@@ -20,12 +20,9 @@ import java.util.regex.Pattern;
 
 
 @Service("resolveExcelService")
-public class ResolveExcelService{
+public class ResolveExcelService {
     @Autowired
     private UserDao userDao;
-    /**
-     * 注册url
-     */
     private static final String SUFFIX_2003 = ".xls";
     private static final String SUFFIX_2007 = ".xlsx";
     /**
@@ -55,39 +52,32 @@ public class ResolveExcelService{
         if (workbook == null) {
             throw new BusinessException(ReturnCode.CODE_FAIL, "格式错误");
         } else {
-            //获取所有的工作表的的数量
-            int numOfSheet = workbook.getNumberOfSheets();
             //遍历这个这些表
-            for (int i = 0; i < numOfSheet; i++) {
-                //获取一个sheet也就是一个工作簿
-                Sheet sheet = workbook.getSheetAt(i);
-                int lastRowNum = sheet.getLastRowNum();
-                //从第一行开始第一行一般是标题
-                for (int j = 1; j <= lastRowNum; j++) {
-                    Row row = sheet.getRow(j);
-                    User user = new User();
-                    //获取电话单元格
-                    if (row.getCell(0) != null) {
-                        row.getCell(0).setCellType(Cell.CELL_TYPE_STRING);
-                        String sid = row.getCell(0).getStringCellValue();
-                        //todo 正则比对
-                        boolean match = Pattern.matches(SID_REG, sid);
-                        if (!match) {
-                            throw new BusinessException(ReturnCode.CODE_FAIL, "电话格式错误");
-                        }
-                        user.setSid(sid);
+            Sheet sheet = workbook.getSheetAt(0);
+            int lastRowNum = sheet.getLastRowNum();
+            //从第一行开始第一行一般是标题
+            for (int j = 1; j <= lastRowNum; j++) {
+                Row row = sheet.getRow(j);
+                User user = new User();
+                //获取学号单元格
+                if (row.getCell(0) != null) {
+                    row.getCell(0).setCellType(Cell.CELL_TYPE_STRING);
+                    String sid = row.getCell(0).getStringCellValue();
+                    boolean match = Pattern.matches(SID_REG, sid);
+                    if (!match) {
+                        throw new BusinessException(ReturnCode.CODE_FAIL, "学号格式错误");
                     }
-                    //姓名
-                    if (row.getCell(1) != null) {
-                        row.getCell(1).setCellType(Cell.CELL_TYPE_STRING);
-                        String name = row.getCell(1).getStringCellValue();
-                        user.setName(name);
-                    }
-                    list.add(user);
+                    user.setSid(sid);
                 }
+                //姓名
+                if (row.getCell(1) != null) {
+                    row.getCell(1).setCellType(Cell.CELL_TYPE_STRING);
+                    String name = row.getCell(1).getStringCellValue();
+                    user.setName(name);
+                }
+                list.add(user);
             }
-
-            for(User i : list){
+            for (User i : list) {
                 userDao.insertUserByParam(i);
             }
         }
