@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.xander</groupId>
-	<artifactId>fileupload</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>fileupload</name>
-	<description>fileUpload project for Spring Boot</description>
+	<artifactId>raffle</artifactId>
+	<version>V1.0-RELEASE</version>
+	<name>raffle</name>
+	<description>A scratch card project by Spring Boot</description>
 
 	<properties>
 		<java.version>1.8</java.version>
