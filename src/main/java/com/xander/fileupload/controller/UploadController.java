@@ -81,6 +81,7 @@ public class UploadController {
         return daoService.findAllUser();
     }
 
-
-
+    @RequestMapping("/rand")
+    @ResponseBody
+    public User randData(){return daoService.getRand();}
 }
