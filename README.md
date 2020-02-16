@@ -15,9 +15,13 @@ CREATE TABLE user(
     'name' VARCHAR(30) NOT NULL,
     PRIMARY LEY('id')
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE USER 'raffle'@'localhost' IDENTIFIED BY '123456';
+GRANT privileges ON raffle.* TO 'raffle'@'localhost';
 ```
 
+后续应该会添加自定义数据库设置。咕
 
+##  使用
 
 下载release中的jar包，在命令行中使用` java -jar xxx.jar`运行，需要安装java。
 
