@@ -12,11 +12,11 @@
 
 
 
-<img src="https://github.com/Xander-C/raffle/blob/master/page1.png"/>
+<img src="https://github.com/Xander-C/raffle/blob/master/page1.PNG"/>
 
 已优化移动端显示，亦可在移动端使用。
 
-<img src="https://github.com/Xander-C/raffle/blob/master/mobile.png"/>
+<img src="https://github.com/Xander-C/raffle/blob/master/mobile.PNG"/>
 
 
 
