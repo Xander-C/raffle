@@ -19,21 +19,19 @@ CREATE TABLE user(
 
 
 
-## 本地安装使用
-
 下载release中的jar包，在命令行中使用` java -jar xxx.jar`运行，需要安装java。
 
 运行后到浏览器中访问` localhost:9091`使用。
 
-<img src="./page0.png" >
+<img src="https://github.com/Xander-C/raffle/blob/master/page0.PNG" >
 
 
 
-<img src="./page1.png"/>
+<img src="https://github.com/Xander-C/raffle/blob/master/page1.PNG"/>
 
 已优化移动端显示，亦可在移动端使用。
 
-<img src="./mobile.png"/>
+<img src="https://github.com/Xander-C/raffle/blob/master/mobile.PNG"/>
 
 
 
