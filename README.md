@@ -2,7 +2,22 @@
 
 南邮校科协的寒假项目，算是前端与java组一半一半？前端上传excel表格，后端解析后导入到mysql数据库中，随机从数据库中取出数据放到刮刮卡中。
 
-## 本地安装使用
+## 数据库配置
+
+登录mysql数据库后使用以下命令配置数据库。
+
+```mysql
+CREATE DATABASE raffle;
+use raffle;
+CREATE TABLE user(
+    'id' INT UNSIGNED AUTO_INCREMENT,
+    'sid' VARCHAR(9) NOT NULL,
+    'name' VARCHAR(30) NOT NULL,
+    PRIMARY LEY('id')
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
+
+
 
 ## 本地安装使用
 
