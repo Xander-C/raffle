@@ -10,13 +10,13 @@
 CREATE DATABASE raffle;
 use raffle;
 CREATE TABLE user(
-    'id' INT UNSIGNED AUTO_INCREMENT,
-    'sid' VARCHAR(9) NOT NULL,
-    'name' VARCHAR(30) NOT NULL,
-    PRIMARY LEY('id')
+    `id` INT UNSIGNED AUTO_INCREMENT,
+    `sid` VARCHAR(9) NOT NULL,
+    `name` VARCHAR(30) NOT NULL,
+    PRIMARY KEY(`id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
-CREATE USER 'raffle'@'localhost' IDENTIFIED BY '123456';
-GRANT privileges ON raffle.* TO 'raffle'@'localhost';
+CREATE USER `raffle`@`localhost` IDENTIFIED BY `123456`;
+GRANT privileges ON raffle.* TO `raffle`@`localhost`;
 ```
 
 后续应该会添加自定义数据库设置。咕
