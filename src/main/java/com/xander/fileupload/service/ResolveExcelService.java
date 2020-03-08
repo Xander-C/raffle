@@ -31,7 +31,6 @@ public class ResolveExcelService {
     public static final String SID_REG = "[BQH][\\d]{8}";
 
     public List<User> resolveExcel(MultipartFile file) throws BusinessException {
-        userDao.deleteAll();
         List<User> list = new ArrayList<>();
         if (file == null) {
             throw new BusinessException(ReturnCode.CODE_FAIL, "对象不能为空");
@@ -77,6 +76,7 @@ public class ResolveExcelService {
                 }
                 list.add(user);
             }
+            userDao.deleteAll();
             for (User i : list) {
                 userDao.insertUserByParam(i);
             }
